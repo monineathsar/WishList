@@ -1,14 +1,15 @@
 import './WishItem.css';
 
-function WishItem() {
+function WishItem(props) {
+    
     return(
         <div className='wish-item'>
             <div className='wish-item__description'>
+                <p>{props.store}</p>
                 <h2>
-                Marc Jacobs Medium Tote Bag
+                {props.title}
                 </h2>
-                <p>Nordstrom</p>
-                <h3>$175</h3>
+                <h3>${props.price}</h3>
             </div>
             <div className='wish-item__buy'>
                 Buy
