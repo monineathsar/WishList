@@ -20,7 +20,7 @@
   .wish-item h2 {
     color: #3a3a3a;
     font-size: 1rem;
-    flex: 0.3;
+    flex: 0.7;
     margin: 0 1rem;
     color: rgb(46, 46, 46);;
   }
@@ -28,7 +28,7 @@
   .wish-item p {
     color: #3a3a3a;
     font-size: 1rem;
-    flex: 0.1;
+    flex: 0.2;
     margin: 0 1rem;
     color: rgb(99, 99, 99);;
   }
