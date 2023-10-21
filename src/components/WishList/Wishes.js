@@ -1,9 +1,10 @@
 import WishItem from './WishItem';
 import './Wishes.css'
+import Card from '../Card';
 
 function Wishes(props) {
     return (
-        <div className='wishes'>
+        <Card className='wishes'>
             <WishItem
                 title={props.items[0].title}
                 store={props.items[0].store}
@@ -24,7 +25,7 @@ function Wishes(props) {
                 store={props.items[3].store}
                 price={props.items[3].price}
             ></WishItem>
-        </div>
+        </Card>
     )
 }
 

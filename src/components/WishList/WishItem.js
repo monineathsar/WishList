@@ -1,9 +1,10 @@
 import './WishItem.css';
+import Card from '../Card'
 
 function WishItem(props) {
     
     return(
-        <div className='wish-item'>
+        <Card className='wish-item'>
             <div className='wish-item__description'>
                 <p>{props.store}</p>
                 <h2>
@@ -14,7 +15,7 @@ function WishItem(props) {
             <div className='wish-item__buy'>
                 Buy
             </div>
-        </div>
+        </Card>
     )
 }
 
