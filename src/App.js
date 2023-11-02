@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Wishes from './components/WishList/Wishes'
 
+import NewWish from './components/NewWish/NewWish';
+
 function App() {
   const wishes = [
     {
@@ -33,6 +35,7 @@ function App() {
   return (
     <div>
       <h2>Wish List</h2>
+      <NewWish/>
       <Wishes items={wishes}/>
     </div>
   );
