@@ -5,6 +5,7 @@ import Card from '../Card';
 function Wishes(props) {
     return (
         <Card className='wishes'>
+            <h3>Recent Wishes</h3>
             <WishItem
                 title={props.items[0].title}
                 store={props.items[0].store}
