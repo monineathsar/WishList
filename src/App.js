@@ -8,27 +8,39 @@ import NewWish from './components/NewWish/NewWish';
 const DUMMY_WISHES = [
   {
     id: '1',
-    title: 'Marc Jacobs The Medium Tote Bag',
-    store: 'Nordstrom',
-    price: 195.00
+    title: 'The Medium Tote Bag',
+    brand: 'Marc Jacobs',
+    price: 195.00,
+    size: 'Medium',
+    color: 'Beige',
+    url: 'https://www.marcjacobs.com/default/the-medium-tote-bag/M0016161-050.html',
   },
   {
     id: '2',
     title: 'Diamond Gold-Tone SS Watch',
-    store: "Macy's",
-    price: 367.50
+    brand: 'Seiko',
+    price: 367.50,
+    size: '',
+    color: 'Gold',
+    url: 'https://www.macys.com/shop/product/seiko-womens-diamond-1-8-ct.-t.w.-gold-tone-stainless-steel-bracelet-watch-30mm?ID=12043652',
   },
   {
     id: '3',
     title: 'Cowboy Boots',
-    store: 'DSW',
-    price: 100.00
+    brand: 'Free People',
+    price: 78.00,
+    size: '6.5',
+    color: 'Blush',
+    url: 'https://www.freepeople.com/shop/vegan-ranch-boot/?color=013&countryCode=US&gclid=Cj0KCQjwtJKqBhCaARIsAN_yS_lAmy87Cv8WYgnFju55mljKaY4jkjPz0QXs2HpLxFaNo2bDaSZ0CucaAtZEEALw_wcB&gclsrc=aw.ds&inventoryCountry=US&utm_kxconfid=vx6ro62gj&type=REGULAR&quantity=1',
   },
   {
     id: '4',
     title: 'Milsbo Glass Cabinet',
-    store: 'Ikea',
-    price: 249.99
+    brand: 'Ikea',
+    price: 219.99,
+    size: '',
+    color: 'White',
+    url: 'https://www.ikea.com/us/en/p/milsbo-glass-door-cabinet-white-00396416/',
   },
 ];
 

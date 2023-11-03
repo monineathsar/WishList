@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import './WishForm.css';
 
 const WishForm = (props) => {
-    const [enteredStore, setEnteredStore] = useState ('');
+    const [enteredBrand, setEnteredBrand] = useState ('');
     const [enteredWish, setEnteredWish] = useState('');
     const [enteredPrice, setEnteredPrice] = useState('');
+    const [enteredSize, setEnteredSize] = useState('');
+    const [enteredColor, setEnteredColor] = useState('');
+    const [enteredUrl, setEnteredUrl] = useState('');
 
-    const storeChangeHandler = (event) => {
-        setEnteredStore(event.target.value);
+    const brandChangeHandler = (event) => {
+        setEnteredBrand(event.target.value);
     };
 
     const wishChangeHandler = (event) => {
@@ -18,17 +21,29 @@ const WishForm = (props) => {
         setEnteredPrice(event.target.value);
     };
 
+    const sizeChangeHandler = (event) => {
+        setEnteredSize(event.target.value);
+    };
+
+    const colorChangeHandler = (event) => {
+        setEnteredColor(event.target.value);
+    };
+
+    const urlChangeHandler = (event) => {
+        setEnteredUrl(event.target.value);
+    };
+
     const submitHandler = (event) => {
         event.preventDefault();
 
         const wishData = {
-            store: enteredStore,
+            brand: enteredBrand,
             title: enteredWish,
             price: +enteredPrice
         };
 
         props.onSaveWishData(wishData)
-        setEnteredStore('');
+        setEnteredBrand('');
         setEnteredWish('');
         setEnteredPrice('');
     };
@@ -36,8 +51,8 @@ const WishForm = (props) => {
         <form onSubmit={submitHandler}>
             <div className='new-wish__controls'>
                 <div className='new-wish__control'>
-                    <label>Store</label>
-                    <input type='text' value={enteredStore} onChange={storeChangeHandler}/>
+                    <label>Brand</label>
+                    <input type='text' value={enteredBrand} onChange={brandChangeHandler}/>
                 </div>
                 <div className='new-wish__control'>
                     <label>Wish</label>
@@ -46,6 +61,18 @@ const WishForm = (props) => {
                 <div className='new-wish__control'>
                     <label>Price</label>
                     <input type="number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler}/>
+                </div>
+                <div className='new-wish__control'>
+                    <label>Size</label>
+                    <input type="text" value={enteredSize} onChange={sizeChangeHandler}/>
+                </div>
+                <div className='new-wish__control'>
+                    <label>Color</label>
+                    <input type="text" value={enteredColor} onChange={colorChangeHandler}/>
+                </div>
+                <div className='new-wish__control'>
+                    <label>URL Link</label>
+                    <input type="text" value={enteredUrl} onChange={urlChangeHandler}/>
                 </div>
             </div>
             <div className='new-wish__actions'>

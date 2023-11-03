@@ -9,7 +9,7 @@ function Wishes(props) {
             {props.items.map((wish) => (
                 <WishItem 
                 key={wish.id}
-                store={wish.store} 
+                brand={wish.brand} 
                 title={wish.title}
                 price={wish.price}
                 />
