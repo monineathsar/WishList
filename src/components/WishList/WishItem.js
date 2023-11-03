@@ -10,7 +10,7 @@ function WishItem(props) {
                 <h2>
                 {props.title}
                 </h2>
-                <h3>${props.price}</h3>
+                <h3 className='wish-item__price'>${props.price}</h3>
             </div>
             <div className='wish-item__buy'>
                 Buy

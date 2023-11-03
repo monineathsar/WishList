@@ -5,27 +5,15 @@ import Card from '../Card';
 function Wishes(props) {
     return (
         <Card className='wishes'>
-            <h3>Recent Wishes</h3>
-            <WishItem
-                title={props.items[0].title}
-                store={props.items[0].store}
-                price={props.items[0].price}
-            ></WishItem>
-            <WishItem
-                title={props.items[1].title}
-                store={props.items[1].store}
-                price={props.items[1].price}
-            ></WishItem>
-            <WishItem
-                title={props.items[2].title}
-                store={props.items[2].store}
-                price={props.items[2].price}
-            ></WishItem>
-            <WishItem
-                title={props.items[3].title}
-                store={props.items[3].store}
-                price={props.items[3].price}
-            ></WishItem>
+            <h4>Recent Wishes</h4>
+            {props.items.map((wish) => (
+                <WishItem 
+                key={wish.id}
+                store={wish.store} 
+                title={wish.title}
+                price={wish.price}
+                />
+            ))}
         </Card>
     )
 }

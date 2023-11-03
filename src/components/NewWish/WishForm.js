@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './WishForm.css';
 
-const WishForm = () => {
+const WishForm = (props) => {
     const [enteredStore, setEnteredStore] = useState ('');
     const [enteredWish, setEnteredWish] = useState('');
     const [enteredPrice, setEnteredPrice] = useState('');
@@ -24,10 +24,10 @@ const WishForm = () => {
         const wishData = {
             store: enteredStore,
             title: enteredWish,
-            price: enteredPrice
+            price: +enteredPrice
         };
 
-        console.log(wishData)
+        props.onSaveWishData(wishData)
         setEnteredStore('');
         setEnteredWish('');
         setEnteredPrice('');
