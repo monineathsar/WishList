@@ -47,6 +47,7 @@ const WishForm = (props) => {
         setEnteredWish('');
         setEnteredPrice('');
     };
+    
     return (
 
         <form className='wishForm' onSubmit={submitHandler}>

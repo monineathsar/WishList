@@ -65,7 +65,7 @@ function App() {
   return (
     <div>
       <h2>Wish List</h2>
-      <WishModal open={openModal} onClose={closeViewModal}/>
+      <WishModal open={openModal} onClose={closeViewModal} submitForm={addWishHandler}/>
       <Wishes items={wishes} onClick={viewWishItem}/>
       
     </div>
