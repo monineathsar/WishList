@@ -1,4 +1,4 @@
-.new-wish__controls {
+.wishForm__controls {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -7,13 +7,13 @@
     color:  whitesmoke;
 }
 
-.new-wish__control label {
+.wishForm__control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
 }
 
-.new-wish__control input {
+.wishForm__control input {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -23,6 +23,33 @@
     background-color:  whitesmoke;
 }
 
-.new-wish__actions {
+.wishForm__actions {
     text-align: right;
+}
+
+.wishForm button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0b3ad4;
+    background-color: rgb(45, 142, 239);
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+.wishForm button:hover,
+.wishForm button:active {
+    background-color:rgb(45, 142, 239);
+    border-color: rgb(45, 142, 239);
+}
+
+.wishForm button.alternative {
+    color: #07197f;
+    border-color: transparent;
+    background-color: transparent;
+}
+.wishForm button.alternative:hover,
+.wishForm button.alternative:active {
+    background-color: rgb(45, 142, 239);
 }

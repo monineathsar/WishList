@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './WishForm.css';
 
 const WishForm = (props) => {
-    const [enteredBrand, setEnteredBrand] = useState ('');
+    const [enteredBrand, setEnteredBrand] = useState('');
     const [enteredWish, setEnteredWish] = useState('');
     const [enteredPrice, setEnteredPrice] = useState('');
     const [enteredSize, setEnteredSize] = useState('');
@@ -48,38 +48,44 @@ const WishForm = (props) => {
         setEnteredPrice('');
     };
     return (
-        <form onSubmit={submitHandler}>
-            <div className='new-wish__controls'>
-                <div className='new-wish__control'>
+
+        <form className='wishForm' onSubmit={submitHandler}>
+            <div className='wishForm__controls'>
+                <div className='wishForm__control'>
                     <label>Brand</label>
-                    <input type='text' value={enteredBrand} onChange={brandChangeHandler}/>
+                    <input type='text' value={enteredBrand} onChange={brandChangeHandler} />
                 </div>
-                <div className='new-wish__control'>
+                <div className='wishForm__control'>
                     <label>Wish</label>
-                    <input type='text' value={enteredWish} onChange={wishChangeHandler}/>
+                    <input type='text' value={enteredWish} onChange={wishChangeHandler} />
                 </div>
-                <div className='new-wish__control'>
+                <div className='wishForm__control'>
                     <label>Price</label>
-                    <input type="number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler}/>
+                    <input type="number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler} />
                 </div>
-                <div className='new-wish__control'>
+                <div className='wishForm__control'>
                     <label>Size</label>
-                    <input type="text" value={enteredSize} onChange={sizeChangeHandler}/>
+                    <input type="text" value={enteredSize} onChange={sizeChangeHandler} />
                 </div>
-                <div className='new-wish__control'>
+                <div className='wishForm__control'>
                     <label>Color</label>
-                    <input type="text" value={enteredColor} onChange={colorChangeHandler}/>
+                    <input type="text" value={enteredColor} onChange={colorChangeHandler} />
                 </div>
-                <div className='new-wish__control'>
+                <div className='wishForm__control'>
                     <label>URL Link</label>
-                    <input type="text" value={enteredUrl} onChange={urlChangeHandler}/>
+                    <input type="text" value={enteredUrl} onChange={urlChangeHandler} />
+                </div>
+                <div>
+                    <button>Click to Shop</button>
+                    <button className='wishForm__actions'>Move to 'Purchased'</button>
                 </div>
             </div>
-            <div className='new-wish__actions'>
+            <div className='wishForm__actions'>
                 <button type='submit'>Add Wish</button>
+                <button>Delete</button>
             </div>
         </form>
-    )
-}
+    );
+};
 
 export default WishForm;
