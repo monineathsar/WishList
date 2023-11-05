@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './WishForm.css';
+import './EditWishForm.css';
 
-const WishForm = (props) => {
+const EditWishForm = (props) => {
     const [enteredBrand, setEnteredBrand] = useState('');
     const [enteredWish, setEnteredWish] = useState('');
     const [enteredPrice, setEnteredPrice] = useState('');
@@ -82,11 +82,11 @@ const WishForm = (props) => {
                 </div>
             </div>
             <div className='wishForm__actions'>
-                <button type='submit'>Add Wish</button>
+                <button type='submit'>Update Wish</button>
                 <button>Delete</button>
             </div>
         </form>
     );
 };
 
-export default WishForm;
+export default EditWishForm;

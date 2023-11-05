@@ -1,9 +1,9 @@
-import './WishFormModal.css';
-import Card from "../Card";
-import WishForm from './WishForm';
+import './EditWishModal.css';
+import Card from "../../Card";
+import WishForm from '../EditWishForm';
 
-function WishModal({ open, onClose, submitForm }) {
-    if (!open) return null;
+function EditWishForm({ open, onClose, submitForm }) {
+    if (open !== "EDIT") return null;
 
     const saveWishDataHandler = (enteredWishData) => {
         const wishData = {
@@ -23,4 +23,4 @@ function WishModal({ open, onClose, submitForm }) {
     );
 }
 
-export default WishModal;
+export default EditWishForm;
