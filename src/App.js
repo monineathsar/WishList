@@ -46,10 +46,14 @@ const DUMMY_WISHES = [
 
 function App() {
   const [ wishes, setWishes ] = useState(DUMMY_WISHES);
-  const [openModal, setOpenModal] = useState("ADD");
+  const [openModal, setOpenModal] = useState("");
 
-  const viewWishFormModal = () => {
+  const viewEditWishFormModal = () => {
     setOpenModal("EDIT");
+  }
+
+  const viewAddWishFormModal = () => {
+    setOpenModal("ADD");
   }
 
   const closeWishFormModal = (event) => {
@@ -65,9 +69,10 @@ function App() {
   return (
     <div>
       <h2>Wish List</h2>
+      <button onClick={viewAddWishFormModal}>Add Wish</button>
       <AddWishModal open={openModal} onClose={closeWishFormModal} submitForm={addWishHandler}/>
       <EditWishModal open={openModal} onClose={closeWishFormModal}/>
-      <Wishes items={wishes} onClick={viewWishFormModal}/>
+      <Wishes items={wishes} onClick={viewEditWishFormModal}/>
       
     </div>
   );
