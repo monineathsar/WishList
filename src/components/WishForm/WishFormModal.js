@@ -1,6 +1,6 @@
-import './WishModal.css';
+import './WishFormModal.css';
 import Card from "../Card";
-import WishForm from '../NewWish/WishForm';
+import WishForm from './WishForm';
 
 function WishModal({ open, onClose, submitForm }) {
     if (!open) return null;

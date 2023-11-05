@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import Wishes from './components/WishList/Wishes'
-import NewWish from './components/NewWish/NewWish';
-import WishModal from './components/ViewWish/WishModal'
+import WishModal from './components/WishForm/WishFormModal'
 
 const DUMMY_WISHES = [
   {
@@ -48,11 +47,11 @@ function App() {
   const [ wishes, setWishes ] = useState(DUMMY_WISHES);
   const [openModal, setOpenModal] = useState(true);
 
-  const viewWishItem = () => {
+  const viewWishFormModal = () => {
     setOpenModal(true);
   }
 
-  const closeViewModal = (event) => {
+  const closeWishFormModal = (event) => {
       setOpenModal(false);
   };
   
@@ -65,8 +64,8 @@ function App() {
   return (
     <div>
       <h2>Wish List</h2>
-      <WishModal open={openModal} onClose={closeViewModal} submitForm={addWishHandler}/>
-      <Wishes items={wishes} onClick={viewWishItem}/>
+      <WishModal open={openModal} onClose={closeWishFormModal} submitForm={addWishHandler}/>
+      <Wishes items={wishes} onClick={viewWishFormModal}/>
       
     </div>
   );
