@@ -1,0 +1,50 @@
+.header {
+    padding: 1rem;
+  background-color: rgb(87, 85, 85);
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+}
+
+.header h2 {
+    color: whitesmoke;
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.header_searchBar {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.header__actions {
+    text-align: right;
+}
+
+.header button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0b3ad4;
+    background-color: rgb(45, 142, 239);
+    color: white;
+    border-radius: 300px;
+    margin-right: 1rem;
+}
+
+.header button:hover,
+.header button:active {
+    background-color:rgb(45, 142, 239);
+    border-color: rgb(45, 142, 239);
+}
+
+.header button.alternative {
+    color: #07197f;
+    border-color: transparent;
+    background-color: transparent;
+}
+.header button.alternative:hover,
+.header button.alternative:active {
+    background-color: rgb(45, 142, 239);
+}

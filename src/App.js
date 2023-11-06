@@ -4,6 +4,7 @@ import './App.css';
 import Wishes from './components/WishList/Wishes'
 import AddWishModal from './components/WishForm/Modals/AddWishModal'
 import EditWishModal from './components/WishForm/Modals/EditWishModal';
+import Header from './components/Header/Header';
 
 const DUMMY_WISHES = [
   {
@@ -68,8 +69,7 @@ function App() {
 
   return (
     <div>
-      <h2>Wish List</h2>
-      <button onClick={viewAddWishFormModal}>Add Wish</button>
+      <Header onClick={viewAddWishFormModal}/>
       <AddWishModal open={openModal} onClose={closeWishFormModal} submitForm={addWishHandler}/>
       <EditWishModal open={openModal} onClose={closeWishFormModal}/>
       <Wishes items={wishes} onClick={viewEditWishFormModal}/>

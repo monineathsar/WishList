@@ -1,4 +1,4 @@
-import './AddWishModal.css';
+import './WishModal.css';
 import Card from "../../Card";
 import AddWishForm from '../AddWishForm';
 
@@ -12,12 +12,15 @@ function AddWishModal({ open, onClose, submitForm }) {
         };
         submitForm(wishData);
     };
-    
+
 
     return (
         <Card className='wishForm'>
-            <p className="closeBtn" onClick={onClose}>[X]</p>
-            <AddWishForm onSaveWishData={saveWishDataHandler}/>
+            <div className='wishForm_titleBox'>
+                <h2>New Wish</h2>
+                <p className="closeBtn" onClick={onClose}>[X]</p>
+            </div>
+            <AddWishForm onSaveWishData={saveWishDataHandler} />
         </Card>
 
     );

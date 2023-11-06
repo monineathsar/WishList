@@ -1,0 +1,28 @@
+.wishForm {
+    padding: 1rem;
+    background-color: rgb(87, 85, 85);
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 95%;
+}
+
+.closeBtn {
+    text-align: right;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.wishForm_titleBox{
+    display: flex;
+    flex-direction: row;
+    gap: 21rem;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.wishForm h2 {
+    text-align: center;
+    color: whitesmoke;
+    
+}
