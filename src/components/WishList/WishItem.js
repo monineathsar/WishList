@@ -3,10 +3,13 @@ import './WishItem.css';
 // import WishModal from '../ViewWish/WishModal';
 // import Card from '../Card'
 
-function WishItem(props) {
+const WishItem = (props) => {
+    const handleOnClick = () => {
+        props.viewEdit(props.id);
+    }
     return(
         <>
-        <button className='wish-item' onClick={props.onClick}>
+        <button className='wish-item' onClick={handleOnClick}>
             <div className='wish-item__description'>
                 <p>{props.brand}</p>
                 <h2>
@@ -18,6 +21,5 @@ function WishItem(props) {
         </>
     )
 };
-
 
 export default WishItem;

@@ -2,15 +2,15 @@ import './WishModal.css';
 import Card from "../../Card";
 import AddWishForm from '../AddWishForm';
 
-function AddWishModal({ open, onClose, submitForm }) {
-    if (open !== "ADD") return null;
+const AddWishModal = (props) => {
+    if (props.open !== "ADD") return null;
 
     const saveWishDataHandler = (enteredWishData) => {
         const wishData = {
             ...enteredWishData,
             id: Math.random().toString()
         };
-        submitForm(wishData);
+        props.submitForm(wishData);
     };
 
 
@@ -18,7 +18,7 @@ function AddWishModal({ open, onClose, submitForm }) {
         <Card className='wishForm'>
             <div className='wishForm_titleBox'>
                 <h2>New Wish</h2>
-                <p className="closeBtn" onClick={onClose}>[X]</p>
+                <p className="closeBtn" onClick={props.onClose}>[X]</p>
             </div>
             <AddWishForm onSaveWishData={saveWishDataHandler} />
         </Card>

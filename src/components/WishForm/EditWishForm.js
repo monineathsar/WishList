@@ -2,79 +2,110 @@ import React, { useState } from 'react';
 import './EditWishForm.css';
 
 const EditWishForm = (props) => {
-    const [enteredBrand, setEnteredBrand] = useState('');
-    const [enteredWish, setEnteredWish] = useState('');
-    const [enteredPrice, setEnteredPrice] = useState('');
-    const [enteredSize, setEnteredSize] = useState('');
-    const [enteredColor, setEnteredColor] = useState('');
-    const [enteredUrl, setEnteredUrl] = useState('');
+    const id = props.wishItem.id;
+    const [brand, setBrand] = useState(props.wishItem.brand);
+    const [wishTitle, setWishTitle] = useState(props.wishItem.title);
+    const [price, setPrice] = useState(props.wishItem.price);
+    const [size, setSize] = useState(props.wishItem.size);
+    const [color, setColor] = useState(props.wishItem.color);
+    const [urlLink, setUrlLink] = useState(props.wishItem.url);
 
     const brandChangeHandler = (event) => {
-        setEnteredBrand(event.target.value);
+        setBrand(event.target.value);
     };
 
     const wishChangeHandler = (event) => {
-        setEnteredWish(event.target.value);
+        setWishTitle(event.target.value);
     };
 
     const priceChangeHandler = (event) => {
-        setEnteredPrice(event.target.value);
+        setPrice(event.target.value);
     };
 
     const sizeChangeHandler = (event) => {
-        setEnteredSize(event.target.value);
+        setSize(event.target.value);
     };
 
     const colorChangeHandler = (event) => {
-        setEnteredColor(event.target.value);
+        setColor(event.target.value);
     };
 
     const urlChangeHandler = (event) => {
-        setEnteredUrl(event.target.value);
+        setUrlLink(event.target.value);
     };
 
-    const submitHandler = (event) => {
+    const updateHandler = (event) => {
         event.preventDefault();
 
-        const wishData = {
-            brand: enteredBrand,
-            title: enteredWish,
-            price: +enteredPrice
+        const updatedWishData = {
+            id: id,
+            brand: brand,
+            title: wishTitle,
+            price: +price,
+            size: size,
+            color: color,
+            url: urlLink
         };
 
-        props.onSaveWishData(wishData)
-        setEnteredBrand('');
-        setEnteredWish('');
-        setEnteredPrice('');
+        props.onUpdateWishData(id, updatedWishData)
+        setBrand('');
+        setWishTitle('');
+        setPrice('');
     };
     
     return (
 
-        <form className='wishForm' onSubmit={submitHandler}>
+        <form className='wishForm' onSubmit={updateHandler}>
             <div className='wishForm__controls'>
                 <div className='wishForm__control'>
                     <label>Brand</label>
-                    <input type='text' value={enteredBrand} onChange={brandChangeHandler} />
+                    <input 
+                    type='text' 
+                    name='brand'
+                    value={brand} 
+                    onChange={brandChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
                     <label>Wish</label>
-                    <input type='text' value={enteredWish} onChange={wishChangeHandler} />
+                    <input 
+                    type='text' 
+                    name='title'
+                    value={wishTitle} 
+                    onChange={wishChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
                     <label>Price</label>
-                    <input type="number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler} />
+                    <input 
+                    type="number" 
+                    min="0.01" 
+                    step="0.01" 
+                    name='price'
+                    value={price} 
+                    onChange={priceChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
                     <label>Size</label>
-                    <input type="text" value={enteredSize} onChange={sizeChangeHandler} />
+                    <input 
+                    type="text" 
+                    name='size'
+                    value={size} 
+                    onChange={sizeChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
                     <label>Color</label>
-                    <input type="text" value={enteredColor} onChange={colorChangeHandler} />
+                    <input 
+                    type="text" 
+                    name='color'
+                    value={color} 
+                    onChange={colorChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
                     <label>URL Link</label>
-                    <input type="text" value={enteredUrl} onChange={urlChangeHandler} />
+                    <input 
+                    type="text" 
+                    name='url'
+                    value={urlLink} 
+                    onChange={urlChangeHandler} />
                 </div>
                 <div>
                     <button>Click to Shop</button>

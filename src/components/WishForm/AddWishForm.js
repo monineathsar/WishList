@@ -53,28 +53,48 @@ const AddWishForm = (props) => {
         <form className='wishForm' onSubmit={submitHandler}>
             <div className='wishForm__controls'>
                 <div className='wishForm__control'>
-                    <label>Brand</label>
-                    <input type='text' value={enteredBrand} onChange={brandChangeHandler} />
+                    <input 
+                    placeholder='Brand'
+                    type='text' 
+                    value={enteredBrand} 
+                    onChange={brandChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
-                    <label>Wish</label>
-                    <input type='text' value={enteredWish} onChange={wishChangeHandler} />
+                    <input 
+                    placeholder='Wish'
+                    type='text' 
+                    value={enteredWish} 
+                    onChange={wishChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
-                    <label>Price</label>
-                    <input type="number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler} />
+                    <input 
+                    placeholder='Price'
+                    type="number" 
+                    min="0.01" 
+                    step="0.01" 
+                    value={enteredPrice} 
+                    onChange={priceChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
-                    <label>Size</label>
-                    <input type="text" value={enteredSize} onChange={sizeChangeHandler} />
+                    <input 
+                    placeholder='Size'
+                    type="text" 
+                    value={enteredSize} 
+                    onChange={sizeChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
-                    <label>Color</label>
-                    <input type="text" value={enteredColor} onChange={colorChangeHandler} />
+                    <input 
+                    placeholder='Color'
+                    type="text" 
+                    value={enteredColor} 
+                    onChange={colorChangeHandler} />
                 </div>
                 <div className='wishForm__control'>
-                    <label>URL Link</label>
-                    <input type="text" value={enteredUrl} onChange={urlChangeHandler} />
+                    <input 
+                    placeholder='URL Link'
+                    type="text" 
+                    value={enteredUrl} 
+                    onChange={urlChangeHandler} />
                 </div>
             </div>
             <div className='wishForm__actions'>

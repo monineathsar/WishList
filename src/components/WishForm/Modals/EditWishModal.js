@@ -2,15 +2,14 @@ import './WishModal.css';
 import Card from "../../Card";
 import WishForm from '../EditWishForm';
 
-function EditWishForm({ open, onClose, submitForm }) {
-    if (open !== "EDIT") return null;
+const EditWishForm = (props) => {
+    if (props.open !== "EDIT") return null;
 
-    const saveWishDataHandler = (enteredWishData) => {
-        const wishData = {
-            ...enteredWishData,
-            id: Math.random().toString()
+    const saveUpdatedWishHandler = (id, updatedWish) => {
+        const updatedWishData = {
+            ...updatedWish
         };
-        submitForm(wishData);
+        props.submitForm(updatedWishData);
     };
 
 
@@ -18,9 +17,9 @@ function EditWishForm({ open, onClose, submitForm }) {
         <Card className='wishForm'>
             <div className='wishForm_titleBox'>
                 <h2>Edit Wish</h2>
-                <p className="closeBtn" onClick={onClose}>[X]</p>
+                <p className="closeBtn" onClick={props.onClose}>[X]</p>
             </div>
-            <WishForm onSaveWishData={saveWishDataHandler} />
+            <WishForm wishItem={props.wish} onUpdateWishData={saveUpdatedWishHandler} />
         </Card>
 
     );
