@@ -51,6 +51,9 @@ const EditWishForm = (props) => {
         setBrand('');
         setWishTitle('');
         setPrice('');
+        setSize('');
+        setColor('');
+        setUrlLink('');
     };
     
     return (
