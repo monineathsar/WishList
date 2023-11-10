@@ -32,17 +32,19 @@ function App() {
     });
   };
 
-  const editWishHandler = (wish) => {
-    setWishes((updatedWishes) => {
-      return [wish, ...updatedWishes]
-    })
+  const editWishHandler = (updatedWish) => {
+    const updatedWishes = wishes.filter(wish => wish.id !== updatedWish.id);
+    updatedWishes.unshift(updatedWish);
+    setWishes(updatedWishes);
+    setOpenModal("");
   }
+  
 
   return (
     <div>
       <Header onClick={viewAddWishFormModal}/>
       <AddWishModal open={openModal} onClose={closeWishFormModal} submitForm={addWishHandler}/>
-      <EditWishModal wish={editWish} open={openModal} onClose={closeWishFormModal} submitForm={editWishHandler}/>
+      <EditWishModal wish={editWish} open={openModal} onClose={closeWishFormModal} updateForm={editWishHandler}/>
       <Wishes items={wishes} viewEdit={viewEditWishFormModal}/>
       
     </div>

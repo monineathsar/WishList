@@ -47,7 +47,7 @@ const EditWishForm = (props) => {
             url: urlLink
         };
 
-        props.onUpdateWishData(id, updatedWishData)
+        props.onUpdateWishData(updatedWishData)
         setBrand('');
         setWishTitle('');
         setPrice('');

@@ -5,11 +5,12 @@ import WishForm from '../EditWishForm';
 const EditWishForm = (props) => {
     if (props.open !== "EDIT") return null;
 
-    const saveUpdatedWishHandler = (id, updatedWish) => {
+    const updatedWishHandler = (updatedWish) => {
+
         const updatedWishData = {
             ...updatedWish
         };
-        props.submitForm(updatedWishData);
+        props.updateForm(updatedWishData);
     };
 
 
@@ -19,7 +20,7 @@ const EditWishForm = (props) => {
                 <h2>Edit Wish</h2>
                 <p className="closeBtn" onClick={props.onClose}>[X]</p>
             </div>
-            <WishForm wishItem={props.wish} onUpdateWishData={saveUpdatedWishHandler} />
+            <WishForm wishItem={props.wish} onUpdateWishData={updatedWishHandler} />
         </Card>
 
     );
