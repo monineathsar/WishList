@@ -39,13 +39,19 @@ const AddWishForm = (props) => {
         const wishData = {
             brand: enteredBrand,
             title: enteredWish,
-            price: +enteredPrice
+            price: +enteredPrice,
+            size: enteredSize,
+            color: enteredColor,
+            url: enteredUrl
         };
 
         props.onSaveWishData(wishData)
         setEnteredBrand('');
         setEnteredWish('');
         setEnteredPrice('');
+        setEnteredSize('');
+        setEnteredColor('');
+        setEnteredUrl('');
     };
     
     return (
