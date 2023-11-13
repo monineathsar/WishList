@@ -13,6 +13,9 @@ const EditWishForm = (props) => {
         props.updateForm(updatedWishData);
     };
 
+    const deletingWishHandler = (selectedWish) => {
+        props.onDelete(selectedWish)
+    }
 
     return (
         <Card className='wishForm'>
@@ -20,7 +23,7 @@ const EditWishForm = (props) => {
                 <h2>Edit Wish</h2>
                 <p className="closeBtn" onClick={props.onClose}>[X]</p>
             </div>
-            <WishForm wishItem={props.wish} onUpdateWishData={updatedWishHandler} />
+            <WishForm wishItem={props.wish} onUpdateWishData={updatedWishHandler} onDeleteWishData={deletingWishHandler}/>
         </Card>
 
     );

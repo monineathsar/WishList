@@ -55,6 +55,19 @@ const EditWishForm = (props) => {
         setColor('');
         setUrlLink('');
     };
+
+    const deleteHandler = () => {
+        const selectedWish = {
+            id: id,
+            brand: brand,
+            title: wishTitle,
+            price: +price,
+            size: size,
+            color: color,
+            url: urlLink
+        }
+        props.onDeleteWishData(selectedWish)
+    }
     
     return (
 
@@ -117,7 +130,7 @@ const EditWishForm = (props) => {
             </div>
             <div className='wishForm__actions'>
                 <button type='submit'>Update Wish</button>
-                <button>Delete</button>
+                <button onClick={deleteHandler}>Delete</button>
             </div>
         </form>
     );
